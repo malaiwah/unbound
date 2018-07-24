@@ -20,6 +20,8 @@ HIDE_VERSION=${HIDE_VERSION:-no}
 STATISTICS_INTERVAL=${STATISTICS_INTERVAL:-0}
 STATISTICS_CUMULATIVE=${STATISTICS_CUMULATIVE:-no}
 EXTENDED_STATISTICS=${EXTENDED_STATISTICS:-no}
+DNSSEC_VALIDATOR=${DNSSEC_VALIDATOR:-no}
+DNSSEC_VERBOSITY=${DNSSEC_VERBOSITY:-0}
 
 
 sed 's/{{DO_IPV6}}/'"${DO_IPV6}"'/' -i /etc/unbound/unbound.conf
@@ -42,6 +44,11 @@ sed 's/{{HIDE_VERSION}}/'"${HIDE_VERSION}"'/' -i /etc/unbound/unbound.conf
 sed 's/{{STATISTICS_INTERVAL}}/'"${STATISTICS_INTERVAL}"'/' -i /etc/unbound/unbound.conf
 sed 's/{{STATISTICS_CUMULATIVE}}/'"${STATISTICS_CUMULATIVE}"'/' -i /etc/unbound/unbound.conf
 sed 's/{{EXTENDED_STATISTICS}}/'"${EXTENDED_STATISTICS}"'/' -i /etc/unbound/unbound.conf
+sed 's/{{DNSSEC_VALIDATOR}}/'"${DNSSEC_VALIDATOR}"'/' -i /etc/unbound/unbound.conf
+if [ "x${DNSSEC_VALIDATOR}x" == "xyesx" ]; then
+	sed 's/##DNSSEC_VALIDATOR##//' -i /etc/unbound/unbound.conf
+fi
+sed 's/{{DNSSEC_VERBOSITY}}/'"${DNSSEC_VERBOSITY}"'/' -i /etc/unbound/unbound.conf
 
 unbound-control-setup
 exec unbound -d -v
