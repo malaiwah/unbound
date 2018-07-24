@@ -1,18 +1,13 @@
-[![Docker Stars](https://img.shields.io/docker/stars/safelinkinternet/unbound.svg)](https://hub.docker.com/r/safelinkinternet/unbound/) [![Docker Pulls](https://img.shields.io/docker/pulls/safelinkinternet/unbound.svg)](https://hub.docker.com/r/safelinkinternet/unbound/)
+[![Docker Stars](https://img.shields.io/docker/stars/malaiwah/unbound.svg)](https://hub.docker.com/r/malaiwah/unbound/) [![Docker Pulls](https://img.shields.io/docker/pulls/malaiwah/unbound.svg)](https://hub.docker.com/r/malaiwah/unbound/)
 # Unbound on Alpine
-Total size of this image is:
-[![](https://badge.imagelayers.io/safelinkinternet/unbound:latest.svg)](https://imagelayers.io/?images=safelinkinternet/unbound:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/version/malaiwah/unbound.svg)](https://microbadger.com/images/malaiwah/unbound "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/malaiwah/unbound.svg)](https://microbadger.com/images/malaiwah/unbound "Get your own image badge on microbadger.com")
 
 ### Running
 
 Use this command to start the container. Unbound will listen on port 53/udp.
 
-`docker run --name unbound -d -p 53:53/udp -p 53:53 safelinkinternet/unbound`
-
-(optional)
-If you want to override the nameserver in the unbound container, you can use:
-
-`docker run --name unbound -d -p 53:53/udp -p 53:53 --dns="127.0.0.1" safelinkinternet/unbound`
+`docker run --name unbound -d -p 53:53/udp -p 53:53 malaiwah/unbound`
 
 ________________________________________
 
