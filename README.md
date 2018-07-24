@@ -30,3 +30,7 @@ ________________________________________
 * `-e CACHE_MAX_NEGATIVE_TTL` The time to live (TTL) value cap for negative responses in the cache. (Default: "3600", Possible Values: "<integer>")
 * `-e HIDE_IDENTITY` Enable to not answer id.server and hostname.bind queries. (Default: "no", Possible Values: "yes, no")
 * `-e HIDE_VERSION` Enable to not answer version.server and version.bind queries. (Default: "no", Possible Values: "yes, no")
+
+### Original idea
+
+* https://hub.docker.com/r/safelinkinternet/unbound/
