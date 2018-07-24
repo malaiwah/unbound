@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Safelink Internet
+MAINTAINER Michel Belleau <michel.belleau@malaiwah.com>
 
 RUN apk --update add unbound wget bash
 
