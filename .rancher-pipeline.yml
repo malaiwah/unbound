@@ -1,0 +1,10 @@
+stages:
+- name: Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: unbound
+      pushRemote: true
+      registry: docker.picocloud.me
+timeout: 60
