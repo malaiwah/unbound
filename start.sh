@@ -50,9 +50,5 @@ if [ "x${DNSSEC_VALIDATOR}x" == "xyesx" ]; then
 fi
 sed 's/{{DNSSEC_VERBOSITY}}/'"${DNSSEC_VERBOSITY}"'/' -i /etc/unbound/unbound.conf
 
-if [ "x${DNS_AUTHORITATIVE_PORT_53_UDP_ADDR}x" != "xx" ]; then
-        sed "s/##DNS_AUTHORITATIVE_PORT_53_UDP_ADDR##/${DNS_AUTHORITATIVE_PORT_53_UDP_ADDR}/" /etc/unbound/conf.d/domains.orig > /etc/unbound/conf.d/domains.conf
-fi
-
 unbound-control-setup
 exec unbound -d -v
