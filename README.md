@@ -5,9 +5,20 @@
 
 ### Running
 
-Use this command to start the container. Unbound will listen on port 53/udp.
+Use this command to start the container. Unbound will listen on ports 53/udp and 53/tcp.
 
 `docker run --name unbound -d -p 53:53/udp -p 53:53 malaiwah/unbound`
+
+Put custom files in /etc/unbound/conf.d , ending in *.conf
+
+`docker run --name unbound -d -p 53:53/udp -p 53:53 -v /opt/docker-unbound/forward.conf:/etc/unbound/conf.d/forward.conf:ro malaiwah/unbound`
+
+For example, to forward a specific domain or even default for all queries with the root at ".":
+
+forward-zone:
+        name: "."
+        forward-addr: 8.8.8.8
+        forward-addr: 8.8.4.4
 
 ________________________________________
 
